@@ -9,9 +9,16 @@ import com.edandaniel.mylibrary.R
 
 class CustomToast(val context: Context, val inflater: LayoutInflater) {
 
-    fun showToast(text: String) {
-        val customToastroot = inflater.inflate(R.layout.custom_toast, null)
+    fun showToast(text: String, type:String) {
+        var customToastroot = inflater.inflate(R.layout.custom_toast, null)
         val customtoast = Toast(context)
+
+        when(type){
+            "success" -> {customToastroot = inflater.inflate(R.layout.success_toast, null)}
+            "info" -> {customToastroot = inflater.inflate(R.layout.info_toast, null)}
+            "error" -> {customToastroot = inflater.inflate(R.layout.error_toast, null)}
+             else  -> {customToastroot = inflater.inflate(R.layout.custom_toast, null)}
+        }
 
         val textView = customToastroot.findViewById<TextView>(R.id.textView1)
         textView.text = text
