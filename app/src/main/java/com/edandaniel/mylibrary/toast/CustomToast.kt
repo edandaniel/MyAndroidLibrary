@@ -3,6 +3,7 @@ package com.edandaniel.mylibrary.toast
 import android.content.Context
 import android.view.Gravity
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import com.edandaniel.mylibrary.R
@@ -10,7 +11,7 @@ import com.edandaniel.mylibrary.R
 class CustomToast(val context: Context, val inflater: LayoutInflater) {
 
     fun showToast(text: String, type:String) {
-        var customToastroot = inflater.inflate(R.layout.custom_toast, null)
+        var customToastroot: View //= inflater.inflate(R.layout.custom_toast, null)
         val customtoast = Toast(context)
 
         when(type){
